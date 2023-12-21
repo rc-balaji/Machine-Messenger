@@ -9,8 +9,9 @@ const App = () => {
 
   const sendMessage = async () => {
     try {
-      await axios.post('http://localhost:3000/send-message', { message });
+      await axios.post('https://machine-server.onrender.com/send-message', { message });
       console.log('Message sent successfully!');
+      setMessage("")
     } catch (error) {
       console.error('Error sending message:', error.message);
     }

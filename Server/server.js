@@ -6,7 +6,7 @@ const mqtt = require('mqtt');
 const cors = require('cors')
 
 const app = express();
-const port = 3000;
+const port = 3000 || process.env.port;
 
 app.use(cors())
 // Create an MQTT client
@@ -35,5 +35,5 @@ app.post('/send-message', (req, res) => {
 
 // Start the Express server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on ${port}`);
 });
